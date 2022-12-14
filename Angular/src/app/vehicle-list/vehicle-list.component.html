@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="col-lg-12">
+    <button class="btn btn-primary" (click)="createNavigate()">Létrehozás</button>
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Név</th>
+          <th scope="col">Ár</th>
+          <th scope="col">Év</th>
+          <th scope="col">műveletek</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicleList; index as i">
+          <td scope="row">{{ i + 1 }}</td>
+          <td scope="row">{{ vehicle.name }}</td>
+          <td scope="row">{{ vehicle.cost }}</td>
+          <td scope="row">{{ vehicle.year }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="updateNavigate(vehicle.id)">Módosít</button>
+            <button class="btn btn-danger" (click)="deleteById(vehicle.id)">Töröl</button>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>
